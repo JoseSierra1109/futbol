@@ -33,14 +33,16 @@
       font-size: 1.5em;
       margin-top: 20px;
     }
+    .table-container {
+      overflow-x: auto; /* Permite desplazamiento horizontal en móviles */
+      margin-bottom: 20px;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 15px 0;
       background-color: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-      overflow-x: auto;
     }
     th, td {
       padding: 12px;
@@ -114,6 +116,10 @@
       .modal-content {
         width: 95%;
       }
+      #toggleDarkMode {
+        font-size: 14px; /* Tamaño de fuente más pequeño para móviles */
+        padding: 8px 12px; /* Ajuste de padding para móviles */
+      }
     }
   </style>
 </head>
@@ -128,34 +134,36 @@
 
   <!-- Tabla: LaLiga -->
   <h2>LaLiga (España) 2024-2025</h2>
-  <table class="table table-striped">
-    <tr>
-      <th>Competición</th>
-      <th>Qué es</th>
-      <th>Cuándo juegan</th>
-      <th>Qué ganan</th>
-      <th>Cómo ganan</th>
-      <th>Qué equipos juegan</th>
-      <th>De dónde son</th>
-      <th>Cada cuánto juegan</th>
-      <th>Datos extra</th>
-    </tr>
-    <tr>
-      <td>LaLiga</td>
-      <td>Liga de fútbol profesional de España</td>
-      <td>Agosto a mayo</td>
-      <td>Título de campeón y premios económicos (€150M+)</td>
-      <td>
-        <span class="info-link" onclick="mostrarInfo('info-laliga')">Más información</span>
-      </td>
-      <td>
-        <span class="equipos-link" onclick="mostrarEquipos('LaLiga')">Ver equipos</span>
-      </td>
-      <td>España</td>
-      <td>Cada año</td>
-      <td class="curiosidad">- Equipo con más títulos: Real Madrid (36).<br>- Jugador histórico: Lionel Messi (máximo goleador histórico con 474 goles).</td>
-    </tr>
-  </table>
+  <div class="table-container">
+    <table class="table table-striped">
+      <tr>
+        <th>Competición</th>
+        <th>Qué es</th>
+        <th>Cuándo juegan</th>
+        <th>Qué ganan</th>
+        <th>Cómo ganan</th>
+        <th>Qué equipos juegan</th>
+        <th>De dónde son</th>
+        <th>Cada cuánto juegan</th>
+        <th>Datos extra</th>
+      </tr>
+      <tr>
+        <td>LaLiga</td>
+        <td>Liga de fútbol profesional de España</td>
+        <td>Agosto a mayo</td>
+        <td>Título de campeón y premios económicos (€150M+)</td>
+        <td>
+          <span class="info-link" onclick="mostrarInfo('info-laliga')">Más información</span>
+        </td>
+        <td>
+          <span class="equipos-link" onclick="mostrarEquipos('LaLiga')">Ver equipos</span>
+        </td>
+        <td>España</td>
+        <td>Cada año</td>
+        <td class="curiosidad">- Equipo con más títulos: Real Madrid (36).<br>- Jugador histórico: Lionel Messi (máximo goleador histórico con 474 goles).</td>
+      </tr>
+    </table>
+  </div>
 
   <!-- Modal para "Cómo ganan" de LaLiga -->
   <div id="info-laliga" class="modal">
@@ -209,34 +217,36 @@
 
   <!-- Tabla: Premier League -->
   <h2>Premier League (Inglaterra) 2024-2025</h2>
-  <table class="table table-striped">
-    <tr>
-      <th>Competición</th>
-      <th>Qué es</th>
-      <th>Cuándo juegan</th>
-      <th>Qué ganan</th>
-      <th>Cómo ganan</th>
-      <th>Qué equipos juegan</th>
-      <th>De dónde son</th>
-      <th>Cada cuánto juegan</th>
-      <th>Datos extra</th>
-    </tr>
-    <tr>
-      <td>Premier League</td>
-      <td>Liga de fútbol profesional de Inglaterra</td>
-      <td>Agosto a mayo</td>
-      <td>Título de campeón y premios económicos (€170M+)</td>
-      <td>
-        <span class="info-link" onclick="mostrarInfo('info-premier')">Más información</span>
-      </td>
-      <td>
-        <span class="equipos-link" onclick="mostrarEquipos('Premier')">Ver equipos</span>
-      </td>
-      <td>Inglaterra</td>
-      <td>Cada año</td>
-      <td class="curiosidad">- Equipo con más títulos: Manchester United (20).<br>- Jugador histórico: Alan Shearer (máximo goleador).</td>
-    </tr>
-  </table>
+  <div class="table-container">
+    <table class="table table-striped">
+      <tr>
+        <th>Competición</th>
+        <th>Qué es</th>
+        <th>Cuándo juegan</th>
+        <th>Qué ganan</th>
+        <th>Cómo ganan</th>
+        <th>Qué equipos juegan</th>
+        <th>De dónde son</th>
+        <th>Cada cuánto juegan</th>
+        <th>Datos extra</th>
+      </tr>
+      <tr>
+        <td>Premier League</td>
+        <td>Liga de fútbol profesional de Inglaterra</td>
+        <td>Agosto a mayo</td>
+        <td>Título de campeón y premios económicos (€170M+)</td>
+        <td>
+          <span class="info-link" onclick="mostrarInfo('info-premier')">Más información</span>
+        </td>
+        <td>
+          <span class="equipos-link" onclick="mostrarEquipos('Premier')">Ver equipos</span>
+        </td>
+        <td>Inglaterra</td>
+        <td>Cada año</td>
+        <td class="curiosidad">- Equipo con más títulos: Manchester United (20).<br>- Jugador histórico: Alan Shearer (máximo goleador).</td>
+      </tr>
+    </table>
+  </div>
 
   <!-- Modal para "Cómo ganan" de Premier League -->
   <div id="info-premier" class="modal">
@@ -290,34 +300,36 @@
 
   <!-- Tabla: Champions League -->
   <h2>Champions League (Europa) 2024-2025</h2>
-  <table class="table table-striped">
-    <tr>
-      <th>Competición</th>
-      <th>Qué es</th>
-      <th>Cuándo juegan</th>
-      <th>Qué ganan</th>
-      <th>Cómo ganan</th>
-      <th>Qué equipos juegan</th>
-      <th>De dónde son</th>
-      <th>Cada cuánto juegan</th>
-      <th>Datos extra</th>
-    </tr>
-    <tr>
-      <td>Champions League</td>
-      <td>Torneo de clubes más prestigioso de Europa</td>
-      <td>Septiembre a mayo/junio</td>
-      <td>Trofeo de la Champions League y premios económicos (€200M+)</td>
-      <td>
-        <span class="info-link" onclick="mostrarInfo('info-champions')">Más información</span>
-      </td>
-      <td>
-        <span class="equipos-link" onclick="mostrarEquipos('Champions')">Ver equipos</span>
-      </td>
-      <td>Europa</td>
-      <td>Cada año</td>
-      <td class="curiosidad">- Equipo con más títulos: Real Madrid (15).<br>- Jugador histórico: Cristiano Ronaldo (máximo goleador).</td>
-    </tr>
-  </table>
+  <div class="table-container">
+    <table class="table table-striped">
+      <tr>
+        <th>Competición</th>
+        <th>Qué es</th>
+        <th>Cuándo juegan</th>
+        <th>Qué ganan</th>
+        <th>Cómo ganan</th>
+        <th>Qué equipos juegan</th>
+        <th>De dónde son</th>
+        <th>Cada cuánto juegan</th>
+        <th>Datos extra</th>
+      </tr>
+      <tr>
+        <td>Champions League</td>
+        <td>Torneo de clubes más prestigioso de Europa</td>
+        <td>Septiembre a mayo/junio</td>
+        <td>Trofeo de la Champions League y premios económicos (€200M+)</td>
+        <td>
+          <span class="info-link" onclick="mostrarInfo('info-champions')">Más información</span>
+        </td>
+        <td>
+          <span class="equipos-link" onclick="mostrarEquipos('Champions')">Ver equipos</span>
+        </td>
+        <td>Europa</td>
+        <td>Cada año</td>
+        <td class="curiosidad">- Equipo con más títulos: Real Madrid (15).<br>- Jugador histórico: Cristiano Ronaldo (máximo goleador).</td>
+      </tr>
+    </table>
+  </div>
 
   <!-- Modal para "Cómo ganan" de Champions League -->
   <div id="info-champions" class="modal">
@@ -372,34 +384,36 @@
 
   <!-- Tabla: Copa Libertadores -->
   <h2>Copa Libertadores (Sudamérica) 2025</h2>
-  <table class="table table-striped">
-    <tr>
-      <th>Competición</th>
-      <th>Qué es</th>
-      <th>Cuándo juegan</th>
-      <th>Qué ganan</th>
-      <th>Cómo ganan</th>
-      <th>Qué equipos juegan</th>
-      <th>De dónde son</th>
-      <th>Cada cuánto juegan</th>
-      <th>Datos extra</th>
-    </tr>
-    <tr>
-      <td>Copa Libertadores</td>
-      <td>Torneo de clubes más importante de Sudamérica</td>
-      <td>Febrero a noviembre</td>
-      <td>Trofeo de la Copa Libertadores y clasificación al Mundial de Clubes</td>
-      <td>
-        <span class="info-link" onclick="mostrarInfo('info-libertadores')">Más información</span>
-      </td>
-      <td>
-        <span class="equipos-link" onclick="mostrarEquipos('Libertadores')">Ver equipos</span>
-      </td>
-      <td>Sudamérica</td>
-      <td>Cada año</td>
-      <td class="curiosidad">- Equipo con más títulos: Independiente (7).<br>- Jugador histórico: Alberto Spencer (máximo goleador histórico con 54 goles).</td>
-    </tr>
-  </table>
+  <div class="table-container">
+    <table class="table table-striped">
+      <tr>
+        <th>Competición</th>
+        <th>Qué es</th>
+        <th>Cuándo juegan</th>
+        <th>Qué ganan</th>
+        <th>Cómo ganan</th>
+        <th>Qué equipos juegan</th>
+        <th>De dónde son</th>
+        <th>Cada cuánto juegan</th>
+        <th>Datos extra</th>
+      </tr>
+      <tr>
+        <td>Copa Libertadores</td>
+        <td>Torneo de clubes más importante de Sudamérica</td>
+        <td>Febrero a noviembre</td>
+        <td>Trofeo de la Copa Libertadores y clasificación al Mundial de Clubes</td>
+        <td>
+          <span class="info-link" onclick="mostrarInfo('info-libertadores')">Más información</span>
+        </td>
+        <td>
+          <span class="equipos-link" onclick="mostrarEquipos('Libertadores')">Ver equipos</span>
+        </td>
+        <td>Sudamérica</td>
+        <td>Cada año</td>
+        <td class="curiosidad">- Equipo con más títulos: Independiente (7).<br>- Jugador histórico: Alberto Spencer (máximo goleador histórico con 54 goles).</td>
+      </tr>
+    </table>
+  </div>
 
   <!-- Modal para "Cómo ganan" de Copa Libertadores -->
   <div id="info-libertadores" class="modal">
@@ -452,34 +466,36 @@
 
   <!-- Tabla: Eurocopa -->
   <h2>Eurocopa (Europa) 2024</h2>
-  <table class="table table-striped">
-    <tr>
-      <th>Competición</th>
-      <th>Qué es</th>
-      <th>Cuándo juegan</th>
-      <th>Qué ganan</th>
-      <th>Cómo ganan</th>
-      <th>Qué equipos juegan</th>
-      <th>De dónde son</th>
-      <th>Cada cuánto juegan</th>
-      <th>Datos extra</th>
-    </tr>
-    <tr>
-      <td>Eurocopa</td>
-      <td>Torneo de selecciones nacionales de Europa</td>
-      <td>Cada 4 años</td>
-      <td>Trofeo de la Eurocopa</td>
-      <td>
-        <span class="info-link" onclick="mostrarInfo('info-eurocopa')">Más información</span>
-      </td>
-      <td>
-        <span class="equipos-link" onclick="mostrarEquipos('Eurocopa')">Ver equipos</span>
-      </td>
-      <td>Europa</td>
-      <td>Cada 4 años</td>
-      <td class="curiosidad">- Equipo con más títulos: España y Alemania (3).<br>- Jugador histórico: Cristiano Ronaldo (máximo goleador).</td>
-    </tr>
-  </table>
+  <div class="table-container">
+    <table class="table table-striped">
+      <tr>
+        <th>Competición</th>
+        <th>Qué es</th>
+        <th>Cuándo juegan</th>
+        <th>Qué ganan</th>
+        <th>Cómo ganan</th>
+        <th>Qué equipos juegan</th>
+        <th>De dónde son</th>
+        <th>Cada cuánto juegan</th>
+        <th>Datos extra</th>
+      </tr>
+      <tr>
+        <td>Eurocopa</td>
+        <td>Torneo de selecciones nacionales de Europa</td>
+        <td>Cada 4 años</td>
+        <td>Trofeo de la Eurocopa</td>
+        <td>
+          <span class="info-link" onclick="mostrarInfo('info-eurocopa')">Más información</span>
+        </td>
+        <td>
+          <span class="equipos-link" onclick="mostrarEquipos('Eurocopa')">Ver equipos</span>
+        </td>
+        <td>Europa</td>
+        <td>Cada 4 años</td>
+        <td class="curiosidad">- Equipo con más títulos: España y Alemania (3).<br>- Jugador histórico: Cristiano Ronaldo (máximo goleador).</td>
+      </tr>
+    </table>
+  </div>
 
   <!-- Modal para "Cómo ganan" de Eurocopa -->
   <div id="info-eurocopa" class="modal">
@@ -534,34 +550,36 @@
 
   <!-- Tabla: Copa América -->
   <h2>Copa América (Sudamérica) 2024</h2>
-  <table class="table table-striped">
-    <tr>
-      <th>Competición</th>
-      <th>Qué es</th>
-      <th>Cuándo juegan</th>
-      <th>Qué ganan</th>
-      <th>Cómo ganan</th>
-      <th>Qué equipos juegan</th>
-      <th>De dónde son</th>
-      <th>Cada cuánto juegan</th>
-      <th>Datos extra</th>
-    </tr>
-    <tr>
-      <td>Copa América</td>
-      <td>Torneo de selecciones nacionales de Sudamérica</td>
-      <td>Cada 4 años (varía)</td>
-      <td>Trofeo de la Copa América</td>
-      <td>
-        <span class="info-link" onclick="mostrarInfo('info-copaamerica')">Más información</span>
-      </td>
-      <td>
-        <span class="equipos-link" onclick="mostrarEquipos('CopaAmerica')">Ver equipos</span>
-      </td>
-      <td>Sudamérica</td>
-      <td>Cada 4 años</td>
-      <td class="curiosidad">- Equipo con más títulos: Uruguay y Argentina (15).<br>- Jugador histórico: Norberto Méndez (máximo goleador histórico con 17 goles).</td>
-    </tr>
-  </table>
+  <div class="table-container">
+    <table class="table table-striped">
+      <tr>
+        <th>Competición</th>
+        <th>Qué es</th>
+        <th>Cuándo juegan</th>
+        <th>Qué ganan</th>
+        <th>Cómo ganan</th>
+        <th>Qué equipos juegan</th>
+        <th>De dónde son</th>
+        <th>Cada cuánto juegan</th>
+        <th>Datos extra</th>
+      </tr>
+      <tr>
+        <td>Copa América</td>
+        <td>Torneo de selecciones nacionales de Sudamérica</td>
+        <td>Cada 4 años (varía)</td>
+        <td>Trofeo de la Copa América</td>
+        <td>
+          <span class="info-link" onclick="mostrarInfo('info-copaamerica')">Más información</span>
+        </td>
+        <td>
+          <span class="equipos-link" onclick="mostrarEquipos('CopaAmerica')">Ver equipos</span>
+        </td>
+        <td>Sudamérica</td>
+        <td>Cada 4 años</td>
+        <td class="curiosidad">- Equipo con más títulos: Uruguay y Argentina (15).<br>- Jugador histórico: Norberto Méndez (máximo goleador histórico con 17 goles).</td>
+      </tr>
+    </table>
+  </div>
 
   <!-- Modal para "Cómo ganan" de Copa América -->
   <div id="info-copaamerica" class="modal">
