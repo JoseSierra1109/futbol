@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Competiciones de Fútbol (2025)</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #34495e;
+      border-bottom: 2px solid #34495e;
+      padding-bottom: 5px;
+      font-size: 1.8em;
+      margin-top: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #2c3e50;
+      color: #fff;
+      font-size: 1.1em;
+    }
+    tr:hover {
+      background-color: #f5f5f5;
+      transform: scale(1.02);
+      transition: transform 0.2s ease;
+    }
+    .equipos-link {
+      color: #3498db;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.3s;
+    }
+    .modal-header {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+    .modal-body {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .close {
+      float: right;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @media (max-width: 768px) {
+      table, th, td {
+        font-size: 14px;
+        padding: 10px;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Guía de Competiciones de Fútbol (2025)</h1>
+  <input type="text" id="searchInput" placeholder="Buscar equipos...">
+
+  <!-- Tabla: LaLiga -->
+  <h2>LaLiga (España) 2024-2025</h2>
+  <table>
+    <tr>
+      <th>Competición</th>
+      <th>Qué es</th>
+      <th>Cuándo juegan</th>
+      <th>Qué ganan</th>
+      <th>Cómo ganan</th>
+      <th>Qué equipos juegan</th>
+      <th>De dónde son</th>
+      <th>Cada cuánto juegan</th>
+      <th>Datos extra</th>
+    </tr>
+    <tr>
+      <td>LaLiga</td>
+      <td>Liga de fútbol profesional de España</td>
+      <td>Agosto a mayo</td>
+      <td>Título de campeón y premios económicos (€150M+)</td>
+      <td>
+        <strong>Formato de Todos Contra Todos:</strong><br>
+        - Cada equipo juega 38 partidos (ida y vuelta contra todos los equipos).<br>
+        - El campeón es el equipo que suma más puntos al final de la temporada.<br>
+        - No hay cuartos de final ni finales, solo suma de puntos.
+      </td>
+      <td>
+        <span class="equipos-link" onclick="mostrarEquipos('LaLiga')">Ver equipos</span>
+      </td>
+      <td>España</td>
+      <td>Cada año</td>
+      <td class="curiosidad">- Equipo con más títulos: Real Madrid (36).<br>- Jugador histórico: Karim Benzema (máximo goleador).</td>
+    </tr>
+  </table>
+
+  <!-- Modal para LaLiga -->
+  <div id="modal-laliga" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Equipos de LaLiga 2024-2025
+        <span class="close" onclick="cerrarModal('modal-laliga')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Real Madrid (España)</li>
+          <li>Barcelona (España)</li>
+          <li>Atlético de Madrid (España)</li>
+          <li>Sevilla (España)</li>
+          <li>Real Betis (España)</li>
+          <li>Real Sociedad (España)</li>
+          <li>Athletic Bilbao (España)</li>
+          <li>Valencia (España)</li>
+          <li>Villarreal (España)</li>
+          <li>Getafe (España)</li>
+          <li>Osasuna (España)</li>
+          <li>Celta de Vigo (España)</li>
+          <li>Rayo Vallecano (España)</li>
+          <li>Mallorca (España)</li>
+          <li>Alavés (España)</li>
+          <li>Granada (España)</li>
+          <li>Cádiz (España)</li>
+          <li>Las Palmas (España)</li>
+          <li>Girona (España)</li>
+          <li>Almería (España)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla: Premier League -->
+  <h2>Premier League (Inglaterra) 2024-2025</h2>
+  <table>
+    <tr>
+      <th>Competición</th>
+      <th>Qué es</th>
+      <th>Cuándo juegan</th>
+      <th>Qué ganan</th>
+      <th>Cómo ganan</th>
+      <th>Qué equipos juegan</th>
+      <th>De dónde son</th>
+      <th>Cada cuánto juegan</th>
+      <th>Datos extra</th>
+    </tr>
+    <tr>
+      <td>Premier League</td>
+      <td>Liga de fútbol profesional de Inglaterra</td>
+      <td>Agosto a mayo</td>
+      <td>Título de campeón y premios económicos (€170M+)</td>
+      <td>
+        <strong>Formato de Todos Contra Todos:</strong><br>
+        - Cada equipo juega 38 partidos (ida y vuelta contra todos los equipos).<br>
+        - El campeón es el equipo que suma más puntos al final de la temporada.<br>
+        - No hay cuartos de final ni finales, solo suma de puntos.
+      </td>
+      <td>
+        <span class="equipos-link" onclick="mostrarEquipos('Premier')">Ver equipos</span>
+      </td>
+      <td>Inglaterra</td>
+      <td>Cada año</td>
+      <td class="curiosidad">- Equipo con más títulos: Manchester United (20).<br>- Jugador histórico: Alan Shearer (máximo goleador).</td>
+    </tr>
+  </table>
+
+  <!-- Modal para Premier League -->
+  <div id="modal-premier" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Equipos de la Premier League 2024-2025
+        <span class="close" onclick="cerrarModal('modal-premier')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Manchester City (Inglaterra)</li>
+          <li>Arsenal (Inglaterra)</li>
+          <li>Liverpool (Inglaterra)</li>
+          <li>Manchester United (Inglaterra)</li>
+          <li>Newcastle United (Inglaterra)</li>
+          <li>Tottenham (Inglaterra)</li>
+          <li>Chelsea (Inglaterra)</li>
+          <li>Brighton (Inglaterra)</li>
+          <li>Aston Villa (Inglaterra)</li>
+          <li>Brentford (Inglaterra)</li>
+          <li>Fulham (Inglaterra)</li>
+          <li>Crystal Palace (Inglaterra)</li>
+          <li>Wolverhampton (Inglaterra)</li>
+          <li>West Ham (Inglaterra)</li>
+          <li>Bournemouth (Inglaterra)</li>
+          <li>Nottingham Forest (Inglaterra)</li>
+          <li>Everton (Inglaterra)</li>
+          <li>Leicester City (Inglaterra)</li>
+          <li>Southampton (Inglaterra)</li>
+          <li>Ipswich Town (Inglaterra)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla: Champions League -->
+  <h2>Champions League (Europa) 2024-2025</h2>
+  <table>
+    <tr>
+      <th>Competición</th>
+      <th>Qué es</th>
+      <th>Cuándo juegan</th>
+      <th>Qué ganan</th>
+      <th>Cómo ganan</th>
+      <th>Qué equipos juegan</th>
+      <th>De dónde son</th>
+      <th>Cada cuánto juegan</th>
+      <th>Datos extra</th>
+    </tr>
+    <tr>
+      <td>Champions League</td>
+      <td>Torneo de clubes más prestigioso de Europa</td>
+      <td>Septiembre a mayo/junio</td>
+      <td>Trofeo de la Champions League y premios económicos (€200M+)</td>
+      <td>
+        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
+        - Fase de grupos: 32 equipos en 8 grupos de 4 equipos cada uno.<br>
+        - Los dos mejores de cada grupo avanzan a octavos de final.<br>
+        - Desde octavos hasta la final se juega ida y vuelta (excepto la final, que es a partido único).<br>
+        - El campeón es el equipo que gana la final.
+      </td>
+      <td>
+        <span class="equipos-link" onclick="mostrarEquipos('Champions')">Ver equipos</span>
+      </td>
+      <td>Europa</td>
+      <td>Cada año</td>
+      <td class="curiosidad">- Equipo con más títulos: Real Madrid (15).<br>- Jugador histórico: Cristiano Ronaldo (máximo goleador).</td>
+    </tr>
+  </table>
+
+  <!-- Modal para Champions League -->
+  <div id="modal-champions" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Equipos de la Champions League 2024-2025
+        <span class="close" onclick="cerrarModal('modal-champions')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Real Madrid (España)</li>
+          <li>Barcelona (España)</li>
+          <li>Atlético de Madrid (España)</li>
+          <li>Manchester City (Inglaterra)</li>
+          <li>Arsenal (Inglaterra)</li>
+          <li>Liverpool (Inglaterra)</li>
+          <li>Bayern Munich (Alemania)</li>
+          <li>Borussia Dortmund (Alemania)</li>
+          <li>Paris Saint-Germain (Francia)</li>
+          <li>Inter Milan (Italia)</li>
+          <li>AC Milan (Italia)</li>
+          <li>Napoli (Italia)</li>
+          <li>Porto (Portugal)</li>
+          <li>Benfica (Portugal)</li>
+          <li>Ajax (Países Bajos)</li>
+          <li>RB Leipzig (Alemania)</li>
+          <li>Feyenoord (Países Bajos)</li>
+          <li>Celtic (Escocia)</li>
+          <li>Red Bull Salzburg (Austria)</li>
+          <li>Shakhtar Donetsk (Ucrania)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla: Copa Libertadores -->
+  <h2>Copa Libertadores (Sudamérica) 2025</h2>
+  <table>
+    <tr>
+      <th>Competición</th>
+      <th>Qué es</th>
+      <th>Cuándo juegan</th>
+      <th>Qué ganan</th>
+      <th>Cómo ganan</th>
+      <th>Qué equipos juegan</th>
+      <th>De dónde son</th>
+      <th>Cada cuánto juegan</th>
+      <th>Datos extra</th>
+    </tr>
+    <tr>
+      <td>Copa Libertadores</td>
+      <td>Torneo de clubes más importante de Sudamérica</td>
+      <td>Febrero a noviembre</td>
+      <td>Trofeo de la Copa Libertadores y clasificación al Mundial de Clubes</td>
+      <td>
+        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
+        - Fase de grupos: 32 equipos en 8 grupos de 4 equipos cada uno.<br>
+        - Los dos mejores de cada grupo avanzan a octavos de final.<br>
+        - Desde octavos hasta la final se juega ida y vuelta (excepto la final, que es a partido único).<br>
+        - El campeón es el equipo que gana la final.
+      </td>
+      <td>
+        <span class="equipos-link" onclick="mostrarEquipos('Libertadores')">Ver equipos</span>
+      </td>
+      <td>Sudamérica</td>
+      <td>Cada año</td>
+      <td class="curiosidad">- Equipo con más títulos: Independiente (7).<br>- Jugador histórico: Juan Román Riquelme (ídolo de Boca Juniors).</td>
+    </tr>
+  </table>
+
+  <!-- Modal para Copa Libertadores -->
+  <div id="modal-libertadores" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Equipos de la Copa Libertadores 2025
+        <span class="close" onclick="cerrarModal('modal-libertadores')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Flamengo (Brasil)</li>
+          <li>Palmeiras (Brasil)</li>
+          <li>River Plate (Argentina)</li>
+          <li>Boca Juniors (Argentina)</li>
+          <li>Atlético Mineiro (Brasil)</li>
+          <li>Olimpia (Paraguay)</li>
+          <li>Nacional (Uruguay)</li>
+          <li>Internacional (Brasil)</li>
+          <li>Argentinos Juniors (Argentina)</li>
+          <li>Racing Club (Argentina)</li>
+          <li>Bolívar (Bolivia)</li>
+          <li>Independiente del Valle (Ecuador)</li>
+          <li>Athletico Paranaense (Brasil)</li>
+          <li>Cerro Porteño (Paraguay)</li>
+          <li>Colo-Colo (Chile)</li>
+          <li>Alianza Lima (Perú)</li>
+          <li>The Strongest (Bolivia)</li>
+          <li>Metropolitanos (Venezuela)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla: Eurocopa -->
+  <h2>Eurocopa (Europa) 2024</h2>
+  <table>
+    <tr>
+      <th>Competición</th>
+      <th>Qué es</th>
+      <th>Cuándo juegan</th>
+      <th>Qué ganan</th>
+      <th>Cómo ganan</th>
+      <th>Qué equipos juegan</th>
+      <th>De dónde son</th>
+      <th>Cada cuánto juegan</th>
+      <th>Datos extra</th>
+    </tr>
+    <tr>
+      <td>Eurocopa</td>
+      <td>Torneo de selecciones nacionales de Europa</td>
+      <td>Cada 4 años</td>
+      <td>Trofeo de la Eurocopa</td>
+      <td>
+        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
+        - Fase de grupos: 24 equipos en 6 grupos de 4 equipos cada uno.<br>
+        - Los dos mejores de cada grupo y los 4 mejores terceros avanzan a octavos de final.<br>
+        - Desde octavos hasta la final se juega a partido único.<br>
+        - El campeón es el equipo que gana la final.
+      </td>
+      <td>
+        <span class="equipos-link" onclick="mostrarEquipos('Eurocopa')">Ver equipos</span>
+      </td>
+      <td>Europa</td>
+      <td>Cada 4 años</td>
+      <td class="curiosidad">- Equipo con más títulos: España y Alemania (3).<br>- Jugador histórico: Cristiano Ronaldo (máximo goleador).</td>
+    </tr>
+  </table>
+
+  <!-- Modal para Eurocopa -->
+  <div id="modal-eurocopa" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Equipos de la Eurocopa 2024
+        <span class="close" onclick="cerrarModal('modal-eurocopa')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Francia (Francia)</li>
+          <li>España (España)</li>
+          <li>Alemania (Alemania)</li>
+          <li>Italia (Italia)</li>
+          <li>Portugal (Portugal)</li>
+          <li>Bélgica (Bélgica)</li>
+          <li>Inglaterra (Inglaterra)</li>
+          <li>Países Bajos (Países Bajos)</li>
+          <li>Croacia (Croacia)</li>
+          <li>Suiza (Suiza)</li>
+          <li>Dinamarca (Dinamarca)</li>
+          <li>Suecia (Suecia)</li>
+          <li>Polonia (Polonia)</li>
+          <li>Ucrania (Ucrania)</li>
+          <li>República Checa (República Checa)</li>
+          <li>Austria (Austria)</li>
+          <li>Gales (Gales)</li>
+          <li>Turquía (Turquía)</li>
+          <li>Escocia (Escocia)</li>
+          <li>Serbia (Serbia)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabla: Copa América -->
+  <h2>Copa América (Sudamérica) 2024</h2>
+  <table>
+    <tr>
+      <th>Competición</th>
+      <th>Qué es</th>
+      <th>Cuándo juegan</th>
+      <th>Qué ganan</th>
+      <th>Cómo ganan</th>
+      <th>Qué equipos juegan</th>
+      <th>De dónde son</th>
+      <th>Cada cuánto juegan</th>
+      <th>Datos extra</th>
+    </tr>
+    <tr>
+      <td>Copa América</td>
+      <td>Torneo de selecciones nacionales de Sudamérica</td>
+      <td>Cada 4 años (varía)</td>
+      <td>Trofeo de la Copa América</td>
+      <td>
+        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
+        - Fase de grupos: 12 equipos en 3 grupos de 4 equipos cada uno.<br>
+        - Los dos mejores de cada grupo y los 2 mejores terceros avanzan a cuartos de final.<br>
+        - Desde cuartos hasta la final se juega a partido único.<br>
+        - El campeón es el equipo que gana la final.
+      </td>
+      <td>
+        <span class="equipos-link" onclick="mostrarEquipos('CopaAmerica')">Ver equipos</span>
+      </td>
+      <td>Sudamérica</td>
+      <td>Cada 4 años</td>
+      <td class="curiosidad">- Equipo con más títulos: Uruguay y Argentina (15).<br>- Jugador histórico: Lionel Messi (mejor jugador de la edición 2021).</td>
+    </tr>
+  </table>
+
+  <!-- Modal para Copa América -->
+  <div id="modal-copaamerica" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Equipos de la Copa América 2024
+        <span class="close" onclick="cerrarModal('modal-copaamerica')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Argentina (Argentina)</li>
+          <li>Brasil (Brasil)</li>
+          <li>Uruguay (Uruguay)</li>
+          <li>Chile (Chile)</li>
+          <li>Colombia (Colombia)</li>
+          <li>Perú (Perú)</li>
+          <li>Paraguay (Paraguay)</li>
+          <li>Ecuador (Ecuador)</li>
+          <li>Venezuela (Venezuela)</li>
+          <li>Bolivia (Bolivia)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function mostrarEquipos(competicion) {
+      const modal = document.getElementById(`modal-${competicion.toLowerCase()}`);
+      modal.style.display = 'flex';
+    }
+
+    function cerrarModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = 'none';
+    }
+
+    // Cerrar modal al hacer clic fuera del contenido
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+      }
+    };
+
+    // Filtro de búsqueda
+    document.getElementById('searchInput').addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      const rows = document.querySelectorAll('.modal-body li');
+      rows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(searchTerm) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
