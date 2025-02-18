@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guía de Competiciones de Fútbol (2025)</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    /* Estilos personalizados */
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f4f4f4;
       color: #333;
       margin: 0;
       padding: 10px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #f4f4f4;
     }
     h1 {
       text-align: center;
@@ -32,14 +40,13 @@
       background-color: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-      overflow-x: auto; /* Permite desplazamiento horizontal en móviles */
-      display: block; /* Hace que la tabla sea un bloque para el desplazamiento */
+      overflow-x: auto;
     }
     th, td {
       padding: 12px;
       text-align: left;
       border-bottom: 1px solid #ddd;
-      font-size: 14px; /* Tamaño de fuente más pequeño para móviles */
+      font-size: 14px;
     }
     th {
       background-color: #2c3e50;
@@ -49,7 +56,7 @@
     tr:hover {
       background-color: #f5f5f5;
     }
-    .equipos-link {
+    .equipos-link, .info-link {
       color: #3498db;
       cursor: pointer;
       text-decoration: underline;
@@ -64,13 +71,13 @@
       background-color: rgba(0, 0, 0, 0.7);
       justify-content: center;
       align-items: center;
-      padding: 10px; /* Espaciado para móviles */
+      padding: 10px;
     }
     .modal-content {
       background-color: #fff;
       padding: 15px;
       border-radius: 8px;
-      width: 90%; /* Ancho adaptable para móviles */
+      width: 90%;
       max-width: 500px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       animation: fadeIn 0.3s;
@@ -81,7 +88,7 @@
       color: #2c3e50;
     }
     .modal-body {
-      max-height: 60vh; /* Altura máxima para móviles */
+      max-height: 60vh;
       overflow-y: auto;
     }
     .close {
@@ -102,21 +109,26 @@
       }
       th, td {
         padding: 10px;
-        font-size: 12px; /* Tamaño de fuente más pequeño para móviles */
+        font-size: 12px;
       }
       .modal-content {
-        width: 95%; /* Más ancho en móviles */
+        width: 95%;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Botón de modo oscuro/claro -->
+  <div class="text-end mb-3">
+    <button id="toggleDarkMode" class="btn btn-primary">Modo Oscuro</button>
+  </div>
+
   <h1>Guía de Competiciones de Fútbol (2025)</h1>
-  <input type="text" id="searchInput" placeholder="Buscar equipos...">
+  <input type="text" id="searchInput" placeholder="Buscar equipos..." class="form-control mb-3">
 
   <!-- Tabla: LaLiga -->
   <h2>LaLiga (España) 2024-2025</h2>
-  <table>
+  <table class="table table-striped">
     <tr>
       <th>Competición</th>
       <th>Qué es</th>
@@ -134,21 +146,34 @@
       <td>Agosto a mayo</td>
       <td>Título de campeón y premios económicos (€150M+)</td>
       <td>
-        <strong>Formato de Todos Contra Todos:</strong><br>
-        - Cada equipo juega 38 partidos (ida y vuelta contra todos los equipos).<br>
-        - El campeón es el equipo que suma más puntos al final de la temporada.<br>
-        - No hay cuartos de final ni finales, solo suma de puntos.
+        <span class="info-link" onclick="mostrarInfo('info-laliga')">Más información</span>
       </td>
       <td>
         <span class="equipos-link" onclick="mostrarEquipos('LaLiga')">Ver equipos</span>
       </td>
       <td>España</td>
       <td>Cada año</td>
-      <td class="curiosidad">- Equipo con más títulos: Real Madrid (36).<br>- Jugador histórico: Karim Benzema (máximo goleador).</td>
+      <td class="curiosidad">- Equipo con más títulos: Real Madrid (36).<br>- Jugador histórico: Lionel Messi (máximo goleador histórico con 474 goles).</td>
     </tr>
   </table>
 
-  <!-- Modal para LaLiga -->
+  <!-- Modal para "Cómo ganan" de LaLiga -->
+  <div id="info-laliga" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Cómo ganan en LaLiga
+        <span class="close" onclick="cerrarModal('info-laliga')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <strong>Formato de Todos Contra Todos:</strong><br>
+        - Cada equipo juega 38 partidos (ida y vuelta contra todos los equipos).<br>
+        - El campeón es el equipo que suma más puntos al final de la temporada.<br>
+        - No hay cuartos de final ni finales, solo suma de puntos.
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para equipos de LaLiga -->
   <div id="modal-laliga" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -184,7 +209,7 @@
 
   <!-- Tabla: Premier League -->
   <h2>Premier League (Inglaterra) 2024-2025</h2>
-  <table>
+  <table class="table table-striped">
     <tr>
       <th>Competición</th>
       <th>Qué es</th>
@@ -202,10 +227,7 @@
       <td>Agosto a mayo</td>
       <td>Título de campeón y premios económicos (€170M+)</td>
       <td>
-        <strong>Formato de Todos Contra Todos:</strong><br>
-        - Cada equipo juega 38 partidos (ida y vuelta contra todos los equipos).<br>
-        - El campeón es el equipo que suma más puntos al final de la temporada.<br>
-        - No hay cuartos de final ni finales, solo suma de puntos.
+        <span class="info-link" onclick="mostrarInfo('info-premier')">Más información</span>
       </td>
       <td>
         <span class="equipos-link" onclick="mostrarEquipos('Premier')">Ver equipos</span>
@@ -216,7 +238,23 @@
     </tr>
   </table>
 
-  <!-- Modal para Premier League -->
+  <!-- Modal para "Cómo ganan" de Premier League -->
+  <div id="info-premier" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Cómo ganan en la Premier League
+        <span class="close" onclick="cerrarModal('info-premier')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <strong>Formato de Todos Contra Todos:</strong><br>
+        - Cada equipo juega 38 partidos (ida y vuelta contra todos los equipos).<br>
+        - El campeón es el equipo que suma más puntos al final de la temporada.<br>
+        - No hay cuartos de final ni finales, solo suma de puntos.
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para equipos de Premier League -->
   <div id="modal-premier" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -252,7 +290,7 @@
 
   <!-- Tabla: Champions League -->
   <h2>Champions League (Europa) 2024-2025</h2>
-  <table>
+  <table class="table table-striped">
     <tr>
       <th>Competición</th>
       <th>Qué es</th>
@@ -270,11 +308,7 @@
       <td>Septiembre a mayo/junio</td>
       <td>Trofeo de la Champions League y premios económicos (€200M+)</td>
       <td>
-        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
-        - Fase de grupos: 32 equipos en 8 grupos de 4 equipos cada uno.<br>
-        - Los dos mejores de cada grupo avanzan a octavos de final.<br>
-        - Desde octavos hasta la final se juega ida y vuelta (excepto la final, que es a partido único).<br>
-        - El campeón es el equipo que gana la final.
+        <span class="info-link" onclick="mostrarInfo('info-champions')">Más información</span>
       </td>
       <td>
         <span class="equipos-link" onclick="mostrarEquipos('Champions')">Ver equipos</span>
@@ -285,7 +319,24 @@
     </tr>
   </table>
 
-  <!-- Modal para Champions League -->
+  <!-- Modal para "Cómo ganan" de Champions League -->
+  <div id="info-champions" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Cómo ganan en la Champions League
+        <span class="close" onclick="cerrarModal('info-champions')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
+        - Fase de grupos: 32 equipos en 8 grupos de 4 equipos cada uno.<br>
+        - Los dos mejores de cada grupo avanzan a octavos de final.<br>
+        - Desde octavos hasta la final se juega ida y vuelta (excepto la final, que es a partido único).<br>
+        - El campeón es el equipo que gana la final.
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para equipos de Champions League -->
   <div id="modal-champions" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -321,7 +372,7 @@
 
   <!-- Tabla: Copa Libertadores -->
   <h2>Copa Libertadores (Sudamérica) 2025</h2>
-  <table>
+  <table class="table table-striped">
     <tr>
       <th>Competición</th>
       <th>Qué es</th>
@@ -339,22 +390,35 @@
       <td>Febrero a noviembre</td>
       <td>Trofeo de la Copa Libertadores y clasificación al Mundial de Clubes</td>
       <td>
-        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
-        - Fase de grupos: 32 equipos en 8 grupos de 4 equipos cada uno.<br>
-        - Los dos mejores de cada grupo avanzan a octavos de final.<br>
-        - Desde octavos hasta la final se juega ida y vuelta (excepto la final, que es a partido único).<br>
-        - El campeón es el equipo que gana la final.
+        <span class="info-link" onclick="mostrarInfo('info-libertadores')">Más información</span>
       </td>
       <td>
         <span class="equipos-link" onclick="mostrarEquipos('Libertadores')">Ver equipos</span>
       </td>
       <td>Sudamérica</td>
       <td>Cada año</td>
-      <td class="curiosidad">- Equipo con más títulos: Independiente (7).<br>- Jugador histórico: Juan Román Riquelme (ídolo de Boca Juniors).</td>
+      <td class="curiosidad">- Equipo con más títulos: Independiente (7).<br>- Jugador histórico: Alberto Spencer (máximo goleador histórico con 54 goles).</td>
     </tr>
   </table>
 
-  <!-- Modal para Copa Libertadores -->
+  <!-- Modal para "Cómo ganan" de Copa Libertadores -->
+  <div id="info-libertadores" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Cómo ganan en la Copa Libertadores
+        <span class="close" onclick="cerrarModal('info-libertadores')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
+        - Fase de grupos: 32 equipos en 8 grupos de 4 equipos cada uno.<br>
+        - Los dos mejores de cada grupo avanzan a octavos de final.<br>
+        - Desde octavos hasta la final se juega ida y vuelta (excepto la final, que es a partido único).<br>
+        - El campeón es el equipo que gana la final.
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para equipos de Copa Libertadores -->
   <div id="modal-libertadores" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -388,7 +452,7 @@
 
   <!-- Tabla: Eurocopa -->
   <h2>Eurocopa (Europa) 2024</h2>
-  <table>
+  <table class="table table-striped">
     <tr>
       <th>Competición</th>
       <th>Qué es</th>
@@ -406,11 +470,7 @@
       <td>Cada 4 años</td>
       <td>Trofeo de la Eurocopa</td>
       <td>
-        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
-        - Fase de grupos: 24 equipos en 6 grupos de 4 equipos cada uno.<br>
-        - Los dos mejores de cada grupo y los 4 mejores terceros avanzan a octavos de final.<br>
-        - Desde octavos hasta la final se juega a partido único.<br>
-        - El campeón es el equipo que gana la final.
+        <span class="info-link" onclick="mostrarInfo('info-eurocopa')">Más información</span>
       </td>
       <td>
         <span class="equipos-link" onclick="mostrarEquipos('Eurocopa')">Ver equipos</span>
@@ -421,7 +481,24 @@
     </tr>
   </table>
 
-  <!-- Modal para Eurocopa -->
+  <!-- Modal para "Cómo ganan" de Eurocopa -->
+  <div id="info-eurocopa" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Cómo ganan en la Eurocopa
+        <span class="close" onclick="cerrarModal('info-eurocopa')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
+        - Fase de grupos: 24 equipos en 6 grupos de 4 equipos cada uno.<br>
+        - Los dos mejores de cada grupo y los 4 mejores terceros avanzan a octavos de final.<br>
+        - Desde octavos hasta la final se juega a partido único.<br>
+        - El campeón es el equipo que gana la final.
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para equipos de Eurocopa -->
   <div id="modal-eurocopa" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -457,7 +534,7 @@
 
   <!-- Tabla: Copa América -->
   <h2>Copa América (Sudamérica) 2024</h2>
-  <table>
+  <table class="table table-striped">
     <tr>
       <th>Competición</th>
       <th>Qué es</th>
@@ -475,22 +552,35 @@
       <td>Cada 4 años (varía)</td>
       <td>Trofeo de la Copa América</td>
       <td>
-        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
-        - Fase de grupos: 12 equipos en 3 grupos de 4 equipos cada uno.<br>
-        - Los dos mejores de cada grupo y los 2 mejores terceros avanzan a cuartos de final.<br>
-        - Desde cuartos hasta la final se juega a partido único.<br>
-        - El campeón es el equipo que gana la final.
+        <span class="info-link" onclick="mostrarInfo('info-copaamerica')">Más información</span>
       </td>
       <td>
         <span class="equipos-link" onclick="mostrarEquipos('CopaAmerica')">Ver equipos</span>
       </td>
       <td>Sudamérica</td>
       <td>Cada 4 años</td>
-      <td class="curiosidad">- Equipo con más títulos: Uruguay y Argentina (15).<br>- Jugador histórico: Lionel Messi (mejor jugador de la edición 2021).</td>
+      <td class="curiosidad">- Equipo con más títulos: Uruguay y Argentina (15).<br>- Jugador histórico: Norberto Méndez (máximo goleador histórico con 17 goles).</td>
     </tr>
   </table>
 
-  <!-- Modal para Copa América -->
+  <!-- Modal para "Cómo ganan" de Copa América -->
+  <div id="info-copaamerica" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        Cómo ganan en la Copa América
+        <span class="close" onclick="cerrarModal('info-copaamerica')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <strong>Formato de Fases de Grupos + Eliminación Directa:</strong><br>
+        - Fase de grupos: 12 equipos en 3 grupos de 4 equipos cada uno.<br>
+        - Los dos mejores de cada grupo y los 2 mejores terceros avanzan a cuartos de final.<br>
+        - Desde cuartos hasta la final se juega a partido único.<br>
+        - El campeón es el equipo que gana la final.
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para equipos de Copa América -->
   <div id="modal-copaamerica" class="modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -516,8 +606,27 @@
 
   <!-- Scripts -->
   <script>
+    // Función para cambiar entre modo oscuro y claro
+    const toggleDarkMode = document.getElementById('toggleDarkMode');
+    const body = document.body;
+
+    toggleDarkMode.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        toggleDarkMode.textContent = 'Modo Claro';
+      } else {
+        toggleDarkMode.textContent = 'Modo Oscuro';
+      }
+    });
+
+    // Funciones para mostrar y cerrar modales
     function mostrarEquipos(competicion) {
       const modal = document.getElementById(`modal-${competicion.toLowerCase()}`);
+      modal.style.display = 'flex';
+    }
+
+    function mostrarInfo(modalId) {
+      const modal = document.getElementById(modalId);
       modal.style.display = 'flex';
     }
 
